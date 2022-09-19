@@ -12,7 +12,7 @@
   <a href="#compile">How To Compile</a> •
   <a href="https://discord.gg/5nqcjV8a">Discord Server</a> •
   <a href="#credits">Credits</a> •
-  <a href="#license">License</a> •
+  <a href="#license">License</a>
 </p>
 
 
