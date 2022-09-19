@@ -8,8 +8,8 @@
 
 <p align="center">
   <a href="#planned-features">Planned Features</a> •
-  <a href="#installation-(wip)">Installation</a> •
-  <a href="#compile-(wip)">How To Compile</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#compile">How To Compile</a> •
   <a href="https://discord.gg/5nqcjV8a">Discord Server</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a> •
@@ -25,7 +25,8 @@
 - **Cross-platform** — Windows, Linux, MacOS
 - **GPL-3.0 license**
 
-## Installation (WIP)
+## Installation
+`Important: This is still a work in progress.`
 
 Ensure you have at Python 3.10 64bit installed.
  ```
@@ -37,7 +38,8 @@ Ensure you have at Python 3.10 64bit installed.
 
 You can of course download the latest release from the [releases page] and run it from there.
 
-## Compile (WIP)
+## Compile
+`Important: This is still a work in progress.`
 
 Primrose releases are compiled using [PyInstaller]. To compile Primrose yourself, you will need to install PyInstaller and run the following command:
 
