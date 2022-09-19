@@ -4,7 +4,7 @@
   <img width="100" height="100" src="https://avatars.githubusercontent.com/u/113864858?s=200&v=4">
 </p>
 
-<h5 align="center">Code has not been pushed yet.</h5>
+<h5 align="center">Files have not been pushed yet.</h5>
 <h4 align="center">A modern, open source Discord selfbot written in Python.</h4>
 
 <p align="center">
