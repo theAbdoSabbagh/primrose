@@ -49,4 +49,4 @@ This is my first open source project, and I am facing that fact that there will 
 
 I am also not a professional programmer, so I am sure there are many things I can improve on, and I am open to suggestions.
 
-I am also known with the fact that people will probably copy my code and make their own selfbot, but I am fine with that as long as they give credit. (Self explanatory)
+I am also known with the fact that people will probably copy my code and make their own selfbot, but I don't allow closed source releases as stated in the license.
