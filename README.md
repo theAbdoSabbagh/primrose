@@ -6,6 +6,16 @@
 
 <h4 align="center">A modern, open source Discord selfbot written in Python.</h4>
 
+<p align="center">
+  <a href="#planned-features">Planned Features</a> •
+  <a href="#installation-(wip)">Installation</a> •
+  <a href="#compile-(wip)">How To Compile</a> •
+  <a href="https://discord.gg/5nqcjV8a">Discord Server</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">License</a> •
+</p>
+
+
 <BR>![Screenshot](https://cdn.discordapp.com/attachments/1021505080584851577/1021505135911899257/Screenshot_2022-09-19_213552.png?size=4096)
 
 ## Planned Features
@@ -35,6 +45,14 @@ Primrose releases are compiled using [PyInstaller]. To compile Primrose yourself
 pyinstaller --onefile --icon=primrose.ico entry.py
 ```
 
+## Credits
+
+- Developed by [Nshout](https://github.com/Nshout), former developer of Luna Selfbot.
+
+- [Rapptz](https://github.com/Rapptz) for the awesome Discord API wrapper - [Discord.py](https://github.com/Rapptz/discord.py).
+
+- [Dolfies](https://github.com/dolfies) for the selfbot features on [Discord.py-self](https://github.com/dolfies/discord.py-self).
+
 ## Conclusion
 
 After going around and checking out open source selfbots, I noticed that all of them simply lacked in command separation and proper categorizing.
@@ -50,3 +68,6 @@ This is my first open source project, and I am facing that fact that there will 
 I am also not a professional programmer, so I am sure there are many things I can improve on, and I am open to suggestions.
 
 I am also known with the fact that people will probably copy my code and make their own selfbot, but I don't allow closed source releases as stated in the license.
+
+## License
+Primrose is licensed under the [GPL-3.0 License](https://github.com/primrose-sb/primrose/blob/main/LICENSE).
