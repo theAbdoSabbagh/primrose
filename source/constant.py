@@ -1,4 +1,6 @@
 max_buffer = 11
+api_version = "v10"
+title = "Primrose"
 
 ascii_logo = """    _,--._.-,
    /\\_r-,\\_ )

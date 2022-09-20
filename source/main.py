@@ -1,7 +1,7 @@
-import os
+import threading
 
-from logging.handlers import BufferingHandler
-from time import strftime, localtime
+from imported_cogs import *
+from discord import *
 
 from rich.text import Text
 from rich.panel import Panel
@@ -10,45 +10,70 @@ from textual.app import App
 from textual.widget import Widget
 from textual.widgets import Header, Footer
 
-import logging
-import threading
+from utility import get_prefix, token_info, file_check, check_token
+from utility.printing import log, logs_buffer, title, print_logo
+from secrets import compare_digest
+
 import time
 
 import constant
 
-logging.basicConfig(filename="primrose.log", filemode="w", format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt="%H:%M:%S")
-main_logger = logging.getLogger()
-main_logger.setLevel(logging.DEBUG)
-
-buffering_handler = BufferingHandler(capacity=constant.max_buffer)
-main_logger.addHandler(buffering_handler)
-
-logger = logging.getLogger("primrose")
-buffering_handler.buffer.clear()
+print_logo()
 
 
-def log(log_type: str, message: str):
-    for line in message.split('\n'):
-        match log_type:
-            case "info":
-                logger.info(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
-            case "warning":
-                logger.warning(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
-            case "error":
-                logger.error(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
-            case "critical":
-                logger.critical(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
-            case "debug":
-                logger.debug(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
-            case _:
-                logger.info(f"{strftime('%H:%M', localtime())} |{f' {log_type.title()}':<9}| {line}")
+def wizard():
+    with open("config.json", "r") as f:
+        config = json.load(f)
+        token = config["token"]
+        if not compare_digest(token, ""):
+            login_thread()
+            return
+    print("Please enter your token below.")
+    token = input("> ")
+    print("Checking token...")
+    if check_token(token):
+        with open("config.json", "w") as f:
+            json.dump({"token": token, "prefix": "."}, f, indent=4)
+        print("Token saved!")
+        login_thread()
+    else:
+        print("Invalid token!")
+        wizard()
 
 
-def title(text):
-    if os.name == "nt":
-        os.system(f"title {text}")
-    elif os.name == "posix":
-        print(f"\33]0;{text}\a", end="", flush=True)
+def bot_login():
+    with open("config.json", "r") as f:
+        config = json.load(f)
+        token = config["token"]
+    r = token_info(token)
+    log("event", f"Logging into {r['username']}#{r['discriminator']}...")
+    bot.run(token)
+
+
+bot = commands.Bot(
+    command_prefix=get_prefix(),
+    self_bot=True,
+    help_command=None,
+    guild_subscription_options=GuildSubscriptionOptions.off()
+)
+
+bot.add_cog(HelpCog(bot))
+bot.add_cog(PrivacyCog(bot))
+bot.add_cog(PrefixCog(bot))
+bot.add_cog(ProfileCog(bot))
+bot.add_cog(CodeblockCog(bot))
+bot.add_cog(BackupCog(bot))
+bot.add_cog(FirstMessageCog(bot))
+
+bot.add_cog(OnReadyCog(bot))
+bot.add_cog(OnCommandCog(bot))
+bot.add_cog(OnCommandErrorCog(bot))
+
+
+def login_thread():
+    debugger_thread = threading.Thread(target=bot_login)
+    debugger_thread.daemon = True
+    debugger_thread.start()
 
 
 class Ascii(Widget):
@@ -70,18 +95,8 @@ class Logs(Widget):
     def render(self) -> Panel:
         while True:
             self.refresh()
-            log_messages = [logged.msg for logged in buffering_handler.buffer]
             time.sleep(0.25)
-            return Panel(Align.left("\n".join(log_messages), style="white"))
-
-
-def create_log_messages():
-    for amount, _ in enumerate(range(30), start=1):
-        time.sleep(1)
-        log("info", f"logged {amount}")
-
-
-threading.Thread(target=create_log_messages).start()
+            return Panel(Align.left("\n".join(logs_buffer), style="white"))
 
 
 class MyApp(App):
@@ -98,4 +113,6 @@ class MyApp(App):
 
 def main():
     title("Primrose")
+    file_check()
+    wizard()
     MyApp.run(title="Primrose Selfbot", log="primrose.log")

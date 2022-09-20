@@ -1,2 +1,4 @@
 rich~=12.5.1
 textual~=0.1.18
+discord.py-self~=1.9.2
+requests~=2.28.1
