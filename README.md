@@ -22,6 +22,8 @@
 
 - **Modern look** — Featuring a TUI (text-based user interface) and a modern look, Primrose is easy to use and looks great.
 - **Stable operation** —  Primrose is built on top of the Discord.py library, which is known for its stability and reliability.
+- **Scripts** — Primrose will feature a script system, allowing you to create your own commands and features.
+- **Customization** — Primrose will feature a theming system, allowing you to customize the bot to your liking.
 - **Cross-platform** — Windows, Linux, MacOS
 - **GPL-3.0 license**
 
