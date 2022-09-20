@@ -59,19 +59,17 @@ pyinstaller --onefile --icon=primrose.ico entry.py
 
 ## Conclusion
 
-After going around and checking out open source selfbots, I noticed that all of them simply lacked in command separation and proper categorizing.
-I can see why no one would do it since most would do it with `load_extension`, and that requires an openly exposed .py file.
-Basically compiling with closed source is not possible that way.
+After going around and checking out open source selfbots, I noticed that all that I checked didnt have file based command separation.
+I can see why no one would do it since most would do it with `load_extension` (discord.py docs), and that requires an openly exposed .py file.
+Basically compiling as closed source is not possible that way.
 
-Primrose uses a different approach that is organized and compilable without exposed source code.
+Primrose uses a different approach that is organized and compilable without exposed source code when compiled.
 
 Primrose like any other selfbot is against Discord's ToS, and I am not responsible for any bans you may get.
 
 This is my first open source project, and I am facing that fact that there will be code I might get laughed at, but I am here to learn and maybe even teach or inspire others.
 
 I am also not a professional programmer, so I am sure there are many things I can improve on, and I am open to suggestions.
-
-I am also known with the fact that people will probably copy my code and make their own selfbot, but I don't allow closed source releases as stated in the license.
 
 ## License
 Primrose is licensed under the [GPL-3.0 License](https://github.com/primrose-sb/primrose/blob/main/LICENSE).
