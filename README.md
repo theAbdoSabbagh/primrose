@@ -33,7 +33,7 @@ Ensure you have at Python 3.10 64bit installed.
     git clone
     cd Primrose
     pip install -r requirements.txt
-    python entry.py
+    python source/entry.py
  ```
 
 You can of course download the latest release from the [releases page] and run it from there.
