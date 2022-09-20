@@ -4,7 +4,6 @@
   <img width="100" height="100" src="https://avatars.githubusercontent.com/u/113864858?s=200&v=4">
 </p>
 
-<h5 align="center">Files have not been pushed yet.</h5>
 <h4 align="center">An upcoming, modern, open source Discord selfbot written in Python.</h4>
 
 <p align="center">
@@ -29,7 +28,7 @@
 ## Installation
 `Important: This is still a work in progress.`
 
-Ensure you have Python 3.10 64bit installed. (3.9 won't work due to match statements)
+Ensure you have at Python 3.10 64bit installed.
  ```
     git clone
     cd Primrose
