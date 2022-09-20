@@ -5,7 +5,7 @@
 </p>
 
 <h5 align="center">Files have not been pushed yet.</h5>
-<h4 align="center">A modern, open source Discord selfbot written in Python.</h4>
+<h4 align="center">An upcoming modern, open source Discord selfbot written in Python.</h4>
 
 <p align="center">
   <a href="#planned-features">Planned Features</a> •
