@@ -29,7 +29,7 @@
 ## Installation
 `Important: This is still a work in progress.`
 
-Ensure you have at Python 3.10 64bit installed.
+Ensure you have Python 3.10 64bit installed. (3.9 won't work due to match statements)
  ```
     git clone
     cd Primrose
