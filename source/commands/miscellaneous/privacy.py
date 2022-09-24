@@ -19,3 +19,8 @@ class PrivacyCog(commands.Cog, name="privacy commands"):
         global privacy_toggle
         log("info", f"Privacy {'enabled' if privacy_toggle else 'disabled'}")
         await message_builder(ctx, f"Privacy {'enabled' if privacy_toggle else 'disabled'}")
+        privacy_toggle = not privacy_toggle
+        # this does nothing atm, i think config.json should have a new key for privacy and instead of changing the global var
+        # the key would be changed when running the command between true and false
+        # i think the TUI should then change the logs area and hide the username and tag if privacy was enabled
+        # else it should reveal them

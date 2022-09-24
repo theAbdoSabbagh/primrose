@@ -54,7 +54,9 @@ bot = commands.Bot(
     command_prefix=get_prefix(),
     self_bot=True,
     help_command=None,
-    guild_subscription_options=GuildSubscriptionOptions.off()
+    guild_subscription_options=GuildSubscriptionOptions.off(),
+    strip_after_prefix = True,
+    status = discord.Status.dnd
 )
 
 bot.add_cog(HelpCog(bot))
@@ -64,6 +66,7 @@ bot.add_cog(ProfileCog(bot))
 bot.add_cog(CodeblockCog(bot))
 bot.add_cog(BackupCog(bot))
 bot.add_cog(FirstMessageCog(bot))
+bot.add_cog(ClapCog(bot))
 
 bot.add_cog(OnReadyCog(bot))
 bot.add_cog(OnCommandCog(bot))
@@ -104,7 +107,7 @@ class MyApp(App):
         await self.bind("q", "quit", "Quit")
 
     async def on_mount(self) -> None:
-        await self.view.dock(Header(icon="🌹", tall=False, style="white"), edge="top")
+        await self.view.dock(Header(tall=False, style="white"), edge="top")
         await self.view.dock(Footer(), edge="bottom")
 
         await self.view.dock(Ascii(), edge="left", size=28)

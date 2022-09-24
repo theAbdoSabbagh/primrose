@@ -6,6 +6,7 @@ from commands.configuration.profile import *
 from commands.text.codeblock import *
 from commands.backup.friends_backup import *
 from commands.text.first_message import *
+from commands.text.clap import *
 
 # Events
 from events.on_ready import *

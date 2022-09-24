@@ -11,4 +11,4 @@ class CodeblockCog(commands.Cog, name="codeblock commands"):
         description="Send a codeblock"
     )
     async def codeblock(self, ctx: commands.context, language: str, *, text: str):
-        await self.bot.send(ctx, f"```{language}\n{text}\n```")
+        await ctx.send(f"```{language}\n{text}\n```")
