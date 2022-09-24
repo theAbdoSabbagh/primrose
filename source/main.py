@@ -72,6 +72,8 @@ bot.add_cog(OnReadyCog(bot))
 bot.add_cog(OnCommandCog(bot))
 bot.add_cog(OnCommandErrorCog(bot))
 
+# I think commands dont need their own cog, this can be improved
+
 
 def login_thread():
     debugger_thread = threading.Thread(target=bot_login)
